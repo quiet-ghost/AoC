@@ -17,11 +17,9 @@ public class part1 {
 
       int firstValue = 0;
       int firstIndex = 0;
-
-      int secondIndex = 0;
       int secondValue = 0;
 
-      for (int i = 0; i < digits.length; i++) {
+      for (int i = 0; i < digits.length - 1; i++) {
         if (digits[i] > firstValue) {
           firstValue = digits[i];
           firstIndex = i;
@@ -30,10 +28,13 @@ public class part1 {
       for (int j = firstIndex + 1; j < digits.length; j++) {
         if (digits[j] > secondValue) {
           secondValue = digits[j];
-          secondIndex = j;
         }
       }
-      System.out.println(firstValue + " " + secondValue);
+      int joltage = firstValue * 10 + secondValue;
+      System.out.println(joltage);
+      sum += joltage;
+      System.out.println(sum);
+      file.close();
     }
   }
 }
